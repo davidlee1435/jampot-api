@@ -1,14 +1,23 @@
 import ApiUrl from 'jampot/src/common/ApiUrl.js';
-import { RECEIVE_ACCOUNT_MIXES } from './constants.js';
+import ApiService from 'jampot/src/common/utils/ApiService';
+import { RECEIVE_ACCOUNT_MIXES, REQUEST_ACCOUNT_MIXES } from './constants.js';
 
 const apiUrl = new ApiUrl()
+const apiService = new ApiService()
 
 export function fetchAccountMixes(account) {
     return dispatch => {
-        return fetch(apiUrl.mixList(account.id))
-               .then(response => response.json())
+        return apiService.get(apiUrl.mixList(account.id))
                .then(json => dispatch(receiveAccountMixes(account, json)))
       }
+}
+
+export function requestAccountMixes(account) {
+  return {
+    type: REQUEST_ACCOUNT_MIXES,
+    account,
+    receivedAt: Date.now()
+  }
 }
 
 function receiveAccountMixes(account, json) {
@@ -20,20 +29,6 @@ function receiveAccountMixes(account, json) {
   }
 }
 
-
-//   getMixesAsync() {
-//     return fetch(apiUrl.mixList(1))
-//           .then((response) => response.json())
-//           .then((responseJson)=> {
-//             this.setState({
-//               mixes: responseJson.data,
-//               dataSource: ds.cloneWithRows(responseJson.data),
-//             });
-//           })
-//           .catch((error) => {
-//             console.error(error);
-//           });
-//   }
 
 // postMixAsync() {
 //   var params = {

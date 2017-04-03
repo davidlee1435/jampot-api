@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View, ListView, TouchableHighlight} from 'react-native';
 import { connect } from 'react-redux';
-import {fetchAccountMixes} from './../actions';
+import {fetchAccountMixes, requestAccountMixes} from './../actions';
 
 import MixFeed from './MixFeed.js';
 
@@ -16,6 +16,11 @@ class MixView extends React.Component {
     }
   }
 
+  _getMixes() {
+    this.props.dispatch(requestAccountMixes({id: 1}))
+    this.props.dispatch(fetchAccountMixes({id: 1}))
+  }
+  
   componentDidMount() {
     this.props.dispatch(fetchAccountMixes({id: 1}));
   }

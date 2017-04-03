@@ -1,4 +1,4 @@
-import { RECEIVE_ACCOUNT_MIXES } from './constants';
+import { RECEIVE_ACCOUNT_MIXES, REQUEST_ACCOUNT_MIXES } from './constants';
 
 var _ = require('lodash');
 
@@ -23,6 +23,14 @@ export default function MixReducer(state=initialState, action) {
           },
           ui: {
             loading: false
+          }
+        }
+      })
+    case REQUEST_ACCOUNT_MIXES:
+      return _.merge({}, state, {
+        mixes: {
+          ui: {
+            loading: true
           }
         }
       })

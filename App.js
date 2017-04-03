@@ -6,14 +6,15 @@ import createStore from './src/rootReducer';
 
 const store = createStore();
 
-import MixView from './src/modules/mix/components/MixView'
+// import MixView from './src/modules/mix/components/MixView'
+import LoginView from './src/modules/login/components/LoginView'
 
 export default class App extends React.Component {
   render() {
     return(
       <Provider store={store}>
         <View style={styles.container}>
-          <MixView></MixView>
+          <LoginView></LoginView>
         </View>
       </Provider>
     )
@@ -23,6 +24,6 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 15
+    paddingTop: 20
   }
 })
