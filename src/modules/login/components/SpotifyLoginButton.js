@@ -7,7 +7,7 @@ export default class SpotifyLoginButton extends React.Component {
     return (
       <View style={styles.container}>
         <LinearGradient colors={['#1ED760', '#80EF59']} style={styles.linearGradient}>
-          <TouchableOpacity onPress={() => {console.log('you tapped button')}}>
+          <TouchableOpacity onPress={this.props.onPress}>
             <Text
               style={styles.text}>
               Login with Spotify
