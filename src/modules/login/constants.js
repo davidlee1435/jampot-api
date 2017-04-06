@@ -6,4 +6,4 @@ const actionUtils = new ActionUtils(NAME);
 
 export const FETCH_LOGIN = actionUtils.generateActionConstant('FETCH_LOGIN')
 export const RECEIVE_LOGIN = actionUtils.generateActionConstant('RECEIVE_LOGIN')
-export const REQUEST_LOGIN = actionUtilS.generateActionConstant('REQUEST_LOGIN')
+export const REQUEST_LOGIN = actionUtils.generateActionConstant('REQUEST_LOGIN')
