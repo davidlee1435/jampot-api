@@ -4,6 +4,6 @@ export const NAME = 'login';
 
 const actionUtils = new ActionUtils(NAME);
 
-export const FETCH_LOGIN = actionUtils.generateActionConstant('FETCH_LOGIN')
-export const RECEIVE_LOGIN = actionUtils.generateActionConstant('RECEIVE_LOGIN')
-export const REQUEST_LOGIN = actionUtils.generateActionConstant('REQUEST_LOGIN')
+export const FETCH_LOGIN_REDIRECT = actionUtils.generateActionConstant('FETCH_LOGIN_REDIRECT')
+export const RECEIVE_LOGIN_REDIRECT = actionUtils.generateActionConstant('RECEIVE_LOGIN_REDIRECT')
+export const REQUEST_LOGIN_REDIRECT = actionUtils.generateActionConstant('REQUEST_LOGIN_REDIRECT')

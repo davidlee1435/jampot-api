@@ -1,28 +1,28 @@
 import ApiUrl from 'jampot/src/common/ApiUrl.js';
 import ApiService from 'jampot/src/common/utils/ApiService';
-import { RECEIVE_LOGIN, REQUEST_LOGIN } from './constants.js';
+import { RECEIVE_LOGIN_REDIRECT, REQUEST_LOGIN_REDIRECT } from './constants.js';
 
 const apiUrl = new ApiUrl()
 const apiService = new ApiService()
 
-export function fetchLogin() {
+export function fetchLoginRedirect() {
   return dispatch => {
     return apiService.get(apiUrl.login())
-           .then(json => dispatch(receiveLogin(json)))
+           .then(json => dispatch(receiveLoginRedirect(json)))
   }
 }
 
-export function requestLogin() {
+export function requestLoginRedirect() {
     return {
-      type: REQUEST_LOGIN,
+      type: REQUEST_LOGIN_REDIRECT,
       receivedAt: Date.now()
     }
 }
 
-export function receiveLogin(json) {
+export function receiveLoginRedirect(json) {
   return {
-    type: RECEIVE_LOGIN,
-    account: json.data,
+    type: RECEIVE_LOGIN_REDIRECT,
+    redirect_uri: json.data.redirect_uri,
     receivedAt: Date.now()
   }
 }

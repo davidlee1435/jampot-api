@@ -1,4 +1,4 @@
-import { RECEIVE_LOGIN, REQUEST_LOGIN } from './constants';
+import { RECEIVE_LOGIN_REDIRECT, REQUEST_LOGIN_REDIRECT } from './constants';
 
 var _ = require('lodash');
 
@@ -9,12 +9,12 @@ const initialState = {
 
 export default function LoginReducer(state=initialState, action) {
   switch(action.type) {
-    case RECEIVE_LOGIN:
+    case RECEIVE_LOGIN_REDIRECT:
       return _.assign({}, state, {
         data: action.account,
         ui: {loading: false}
       })
-    case REQUEST_LOGIN:
+    case REQUEST_LOGIN_REDIRECT:
       return _.merge({}, state, {
         ui: {loading: true}
       })
