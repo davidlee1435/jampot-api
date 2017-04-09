@@ -1,22 +1,22 @@
-
 import React from 'react';
-import {StyleSheet, Text, ListView} from 'react-native';
-
+import {StyleSheet, Text, ListView, View} from 'react-native';
+import MixFeedItem from './MixFeedItem.js';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
   }
 
-
   render() {
+    console.log(this.props.navigation)
     return (
       <ListView
+        navigation={this.props.navigation}
         dataSource={this.props.dataSource}
-        renderRow={(rowData) => <Text>{rowData.name}</Text>}
+        renderRow={(rowData) =>
+          <MixFeedItem data={rowData}/>
+        }
       />
     )
   }
-
-
 }

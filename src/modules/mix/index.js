@@ -1,11 +1,11 @@
 import { NAME } from './constants';
-import MixView from './components/MixView';
+import MixFeedView from './components/MixFeedView';
 import reducer from './reducer';
 import * as actions from './actions';
 
 export default {
   NAME,
-  MixView,
+  MixFeedView,
   reducer,
   actions
 }
