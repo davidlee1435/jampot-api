@@ -46,7 +46,6 @@ class MixFeedView extends React.Component {
   }
 
   _renderList() {
-    console.log(this.props)
     return (
       <MixFeed navigation={this.props.navigation} accountId={1} dataSource={this.state.dataSource}/>
     )

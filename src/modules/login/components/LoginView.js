@@ -26,13 +26,10 @@ class LoginView extends React.Component {
   }
 
   _handleLoginRedirect = async (event) => {
-    console.log(event)
-    console.log("fjdkslajfkldsa")
     WebBrowser.dismissBrowser();
   }
 
   _fetchLoginRedirect = async () => {
-    console.log("sending shit")
     const redirectResponse = await apiService.get(apiUrl.login());
     await WebBrowser.openBrowserAsync(redirectResponse.data.redirect_uri)
   }
@@ -43,11 +40,6 @@ class LoginView extends React.Component {
   }
 
   render() {
-    var url = Linking.getInitialURL().then((url) => {
-      if (url) {
-        console.log('Initial url is: ' + url);
-      }
-    }).catch(err => console.error('An error occurred', err));
     return(
       <View style={styles.container}>
         <Text style={styles.logo}>Jampot</Text>
