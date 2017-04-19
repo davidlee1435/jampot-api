@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, ListView, TouchableHighlight} from 'react-native';
+import {StyleSheet, Text, View, ListView, TouchableHighlight, Button} from 'react-native';
 import { connect } from 'react-redux';
 import {fetchAccountMixes, requestAccountMixes} from './../actions';
 
@@ -8,6 +8,15 @@ import MixFeed from './MixFeed.js';
 var _ = require('lodash');
 
 class MixFeedView extends React.Component {
+  static navigationOptions = {
+     title: 'Mixes',
+     header: {
+       right: <Button title="Add Mix"/>,
+     }
+    //  headerRight: <Button title="Info"/>,
+  };
+
+
   constructor() {
     super();
     let dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
@@ -59,10 +68,7 @@ class MixFeedView extends React.Component {
           this._renderList() :
           this._renderEmpty()
         }
-        {/*<TouchableHighlight
-          >
-          <View style={styles.addMix}></View>
-        </TouchableHighlight>*/}
+
       </View>
     );
   }

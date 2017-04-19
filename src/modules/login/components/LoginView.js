@@ -3,6 +3,7 @@ import {StyleSheet, View, Text, Linking} from 'react-native'
 import {connect} from 'react-redux';
 import {fetchLogin, requestLogin} from './../actions';
 import {WebBrowser} from 'expo';
+import { NavigationActions } from 'react-navigation';
 
 import ApiUrl from 'jampot/src/common/ApiUrl.js';
 import ApiService from 'jampot/src/common/utils/ApiService.js';
@@ -12,6 +13,12 @@ var apiService = new ApiService()
 const apiUrl = new ApiUrl()
 
 class LoginView extends React.Component {
+  static navigationOptions = {
+    header: {
+      visible: false
+    }
+  }
+
   constructor() {
     super();
     this.state = {
@@ -27,6 +34,13 @@ class LoginView extends React.Component {
 
   _handleLoginRedirect = async (event) => {
     WebBrowser.dismissBrowser();
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({routeName: 'MixFeedView'})
+      ]
+    })
+    this.props.navigation.dispatch(resetAction);
   }
 
   _fetchLoginRedirect = async () => {

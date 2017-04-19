@@ -5,6 +5,10 @@ import HorizontalPersonList from 'jampot/src/modules/person/components/Horizonta
 import SongListItem from 'jampot/src/modules/songs/components/SongListItem.js';
 
 class MixView extends React.Component {
+  static navigationOptions = {
+     title: 'Mix'
+  }
+
   constructor() {
     super();
   }

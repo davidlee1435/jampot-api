@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import PersonList from './PersonList.js';
 
 export default class HorizontalPersonList extends PersonList {
@@ -7,7 +7,9 @@ export default class HorizontalPersonList extends PersonList {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Kristin, Justine, Charlie and 4 more</Text>
-        <Text style={styles.link}>Add more</Text>
+        <TouchableOpacity>
+          <Text style={styles.link}>Add more</Text>
+        </TouchableOpacity>
       </View>
     )
   }

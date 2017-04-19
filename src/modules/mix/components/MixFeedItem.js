@@ -10,7 +10,7 @@ export default class MixFeedItem extends React.Component {
 
   render() {
     return (
-      <TouchableOpacity onPress={() => {this.props.navigation.navigate('MixFeed', {name: this.props.data.name})}}>
+      <TouchableOpacity onPress={() => {this.props.navigation.navigate('MixView')}}>
         <View style={styles.container}>
           <Image
             style={styles.image}
